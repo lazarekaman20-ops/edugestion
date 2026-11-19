@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduGestion Guinée Lazare</title>
+    <meta name="description" content="Portail enseignant pour la gestion scolaire et universitaire : évaluations, bilans, saisie des notes, absences et suivi des élèves." />
+    <meta property="og:title" content="EduGestion Guinée Lazare" />
+    <meta property="og:description" content="Portail enseignant pour la gestion scolaire et universitaire : évaluations, bilans, saisie des notes, absences et suivi des élèves." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#04102b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="EduGestion" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+  </head>
+  <body class="font-sans antialiased bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+    <script>
+      // Capturer précocement l'événement d'installation PWA avant le montage React
+      window.__deferredPWAInstallPrompt = null;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        window.__deferredPWAInstallPrompt = e;
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      try {
+        // Nettoyage automatique des clés obsolètes d'anciennes tentatives
+        Object.keys(localStorage).forEach((key) => {
+          if (key.toLowerCase().includes('accessgate') || key.toLowerCase().includes('access_gate')) {
+            localStorage.removeItem(key);
+          }
+        });
+      } catch (e) {}
+
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          names.forEach((name) => {
+            if (name !== 'edugestion-pwa-cache-v5') {
+              caches.delete(name);
+            }
+          });
+        });
+      }
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/service-worker.js', { scope: '/' })
+            .then((registration) => {
+              registration.update();
+            })
+            .catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
+

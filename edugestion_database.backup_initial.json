@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-09-22T17:01:28.846Z",
+  "users": [
+    {
+      "id": "user-admin-lazare",
+      "username": "lazare.admin",
+      "nom": "Kaman",
+      "prenom": "Lazare",
+      "email": "lazarekaman20@gmail.com",
+      "telephone": "+224 622 10 45 89",
+      "role": "admin",
+      "passwordHash": "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec",
+      "specialite": "Mathématiques & Sciences Appliquées (Administrateur Principal)",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "classes": [
+        "cls-ps",
+        "cls-ms",
+        "cls-gs",
+        "cls-1e",
+        "cls-2e",
+        "cls-3e",
+        "cls-4e",
+        "cls-5e",
+        "cls-6e",
+        "cls-7e",
+        "cls-8e",
+        "cls-9e",
+        "cls-10e",
+        "cls-11e",
+        "cls-12e",
+        "cls-t"
+      ],
+      "assignedClassName": "Toutes les classes (Super-Admin)",
+      "actif": true,
+      "dateCreation": "2026-09-01",
+      "dernierAcces": "Connecté maintenant",
+      "isSuperAdmin": true,
+      "permissions": {
+        "canAccessDashboard": true,
+        "canAccessStudents": true,
+        "canAccessClasses": true,
+        "canAccessGrades": true,
+        "canAccessEvaluations": true,
+        "canAccessAttendance": true,
+        "canAccessTimetable": true,
+        "canAccessReports": true,
+        "canAccessSettings": true,
+        "canAccessDatabase": true,
+        "canAccessUsers": true,
+        "canAccessAuditLogs": true,
+        "canCreateData": true,
+        "canEditData": true,
+        "canDeleteData": true,
+        "canExportData": true
+      }
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-server-init",
+      "date": "2026-09-16",
+      "heure": "16:00:00",
+      "timestamp": 1790096488847,
+      "action": "connexion",
+      "auteurId": "user-admin-lazare",
+      "auteurNom": "Lazare Kaman",
+      "auteurRole": "Administrateur Principal",
+      "details": "Initialisation du moteur de sécurité et contrôle d’accès backend avec persistance sur disque.",
+      "ip": "127.0.0.1",
+      "statut": "succes"
+    }
+  ],
+  "activities": [],
+  "sessions": [],
+  "invoices": []
+}
